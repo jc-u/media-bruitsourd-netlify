@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DownloadBlock from '../../components/DownloadBlock.astro';
+---
+<BaseLayout
+  title="Ann Bonny — Nee / Söö | Bruit Sourd Press"
+  description="Press kit officiel d'Ann Bonny — Nee / Söö, sortie le 25 septembre 2026."
+  image="/images/ann-bonny-front.jpg"
+>
+  <Header />
+  <main>
+    <section class="relative min-h-screen overflow-hidden">
+      <img src="/images/ann-bonny-front.jpg" alt="Ann Bonny — Nee / Söö" class="absolute inset-0 h-full w-full object-cover" data-parallax />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/5"></div>
+      <div class="relative mx-auto flex min-h-screen max-w-[1600px] flex-col justify-end px-5 pb-16 pt-36 md:px-8 md:pb-24">
+        <div class="kicker mb-5">Une distribution Bruit Sourd</div>
+        <h1 class="display">ANN<br />BONNY</h1>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">Nee / Söö</span>
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">LP</span>
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">25.09.2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-[1600px] gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:py-36">
+      <div class="reveal">
+        <div class="kicker mb-6 text-white/45">Biographie</div>
+        <h2 class="section-title">Une nouvelle<br />histoire.</h2>
+      </div>
+      <div class="reveal space-y-6 text-lg leading-relaxed text-white/75">
+        <p><strong class="text-white">Ann Bonny</strong> (1697 – ?) : pirate méconnue. Mélange de genres, transgressions et refus des normes. Vie agenre et polyforme. Relationne avec John Rackham, et surtout Mary Read. Ridiculise ses pairs et la marine royale. Elle disparaît après la mort de Mary Read, probablement l'année de ses 24 ans.</p>
+        <p><strong class="text-white">Ann Bonny</strong> (2020–2022 – aujourd'hui) : trio grand-estien aux contours variables. Noise idoine. Né des cendres de 37500 Yens et Rhume Carabiné. Toujours vivant.</p>
+        <p>Faisant directement suite à Ma Secte, Ann Bonny est la conséquence de plusieurs années de croisements et de rencontres. À l'origine, 37500 Yens. Puis Harpon. Ensuite Ma Secte. Enfin Ann Bonny : Franck à la batterie, Jud à la basse, Julie à la guitare, au chant et aux synthétiseurs.</p>
+        <p>Après deux EP, dont le premier a connu une sortie physique en cassette, le trio marque le coup en vinyle. Mettre à la fois en valeur les illustrations de <a href="https://www.instagram.com/cherry.jolee/"><strong class="text-white">Cherry Jo Lee</strong></a> et le son (enregistrement, mixage, mastering) de <a href="https://www.instagram.com/gnomestudio/"><strong class="text-white">Sylvain Masure</strong></a>. Et puis ça leur laisse le temps de composer la suite…
+</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-[1600px] px-5 pb-24 md:px-8">
+      <img src="/images/ann-bonny-promo.jpeg" alt="Ann Bonny — photo promo" class="reveal h-auto w-full object-cover grayscale" />
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="max-w-5xl reveal">
+        <div class="kicker mb-6 text-white/45">Blurry-noise</div>
+        <p class="section-title">Violence.<br />Noirceur.<br />Souffle coupé.</p>
+        <p class="mt-10 max-w-3xl text-xl leading-relaxed text-white/65">
+          Le groupe se définit comme blurry-noise. Plus concrètement : une tension à la Chat Pile, des mélodies qui effleurent YC-CY, le tout avec une appétence pour les rythmiques incertaines, et tout ce qu’il peut y avoir de bancal et perturbant dans le paysage actuel de la musique de chambre.
+
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-[1600px] gap-10 px-5 py-24 md:px-8 lg:grid-cols-2 lg:py-36">
+      <img src="/images/ann-bonny-back.jpg" alt="Artwork verso Ann Bonny" class="reveal w-full" />
+      <div class="reveal self-end">
+        <div class="kicker mb-6 text-white/45">Artwork</div>
+        <h2 class="section-title">Cherry<br />Jo Lee.</h2>
+        <p class="mt-8 max-w-xl text-lg text-white/65">Les illustrations du disque prolongent sa noirceur, son humour et son goût pour les formes hybrides.</p>
+      </div>
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="grid gap-12 lg:grid-cols-[1fr_.9fr]">
+        <div>
+          <div class="kicker mb-5 text-white/45">Listen</div>
+          <h2 class="section-title">Écouter.</h2>
+        </div>
+        <div class="flex flex-wrap content-end gap-3">
+          <a class="btn" href="#">Album complet — privé</a>
+          <a class="btn" href="#">MP3</a>
+          <a class="btn" href="#">WAV</a>
+          <a class="btn" href="#">Bandcamp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="max-w-5xl">
+        <div class="kicker mb-6 text-white/45">25 septembre 2026</div>
+        <p class="section-title">Ce n'est pas le retour de 37500 Yens.<br />C'est une nouvelle histoire.</p>
+        <a href="/37500-yens/" class="btn mt-10">Découvrir Astero →</a>
+      </div>
+    </section>
+
+    <DownloadBlock zipHref="#" extra={['Pochette recto / verso', 'Crédits complets']} />
+  </main>
+  <Footer />
+</BaseLayout>

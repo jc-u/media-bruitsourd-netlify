@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DownloadBlock from '../../components/DownloadBlock.astro';
+---
+<BaseLayout
+  title="37500 Yens — Astero | Bruit Sourd Press"
+  description="Press kit officiel de 37500 Yens — Astero, première édition vinyle le 25 septembre 2026."
+  image="/images/astero-cover.jpg"
+>
+  <Header />
+  <main>
+    <section class="relative min-h-screen overflow-hidden">
+      <img src="/images/astero-cover.jpg" alt="37500 Yens — Astero" class="absolute inset-0 h-full w-full object-cover" data-parallax />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+      <div class="relative mx-auto flex min-h-screen max-w-[1600px] flex-col justify-end px-5 pb-16 pt-36 md:px-8 md:pb-24">
+        <div class="kicker mb-5">Bruit Sourd présente</div>
+        <h1 class="display">37500<br />YENS</h1>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">Astero</span>
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">First time on vinyl</span>
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">25.09.2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-[1600px] gap-12 px-5 py-24 md:px-8 lg:grid-cols-[1fr_.9fr] lg:py-36">
+      <div class="reveal">
+        <div class="kicker mb-6 text-white/45">2007 / 2026</div>
+        <h2 class="section-title">Presque 20 ans plus tard.</h2>
+      </div>
+      <div class="reveal space-y-6 text-lg leading-relaxed text-white/75">
+        <p>En 2007, le duo rémois 37500 Yens sort <em>Astero</em> chez Distile Records : huit morceaux instrumentaux quelque part entre noise rock, math-rock, répétition, tension et déconstruction.</p>
+        <p>Après avoir écumé les scènes françaises et partagé l'affiche avec Zu, Joe Lally ou Explosions in the Sky, 37500 Yens impose une musique à la fois physique, précise et profondément libre.</p>
+        <p>Le 25 septembre 2026, <em>Astero</em> paraît pour la première fois en vinyle, accompagné de trois titres bonus numériques inédits issus d'un deuxième album resté dans les tiroirs.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-[1600px] px-5 pb-24 md:px-8">
+      <img src="/images/37500-live.jpg" alt="37500 Yens live" class="reveal mx-auto w-full max-w-5xl grayscale" />
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="grid gap-12 lg:grid-cols-3">
+        <blockquote class="reveal border-l border-white/40 pl-6 text-3xl font-bold leading-tight">“Une révélation.”<span class="mt-4 block text-xs uppercase tracking-[.14em] text-white/45">Perte & Fracas</span></blockquote>
+        <blockquote class="reveal border-l border-white/40 pl-6 text-3xl font-bold leading-tight">“Astero met la barre haut...”<span class="mt-4 block text-xs uppercase tracking-[.14em] text-white/45">XSilence</span></blockquote>
+        <blockquote class="reveal border-l border-white/40 pl-6 text-3xl font-bold leading-tight">“Puissantes et maîtrisées.”<span class="mt-4 block text-xs uppercase tracking-[.14em] text-white/45">Metalorgie</span></blockquote>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-[1600px] gap-12 px-5 py-24 md:px-8 lg:grid-cols-[.9fr_1.1fr] lg:py-36">
+      <img src="/images/37500-duo.jpg" alt="37500 Yens" class="reveal w-full grayscale" />
+      <div class="reveal">
+        <div class="kicker mb-6 text-white/45">Le deuxième album fantôme</div>
+        <h2 class="section-title">La magie n'a jamais opéré.</h2>
+        <div class="mt-9 space-y-5 text-lg leading-relaxed text-white/70">
+          <p>Après <em>Astero</em>, le groupe tente de retrouver la singularité du premier enregistrement : des micros partout, la pièce, les amplis, la batterie, l'air et les accidents.</p>
+          <p>Les morceaux sont bons, notamment un titre avec Sascha Andres d'Heliogabale, mais le son leur échappe. Les essais s'enchaînent, la vie avance, le perfectionnisme s'installe. Le disque reste inachevé.</p>
+          <p>Trois de ces morceaux accompagnent aujourd'hui le vinyle sous forme de bonus numériques : les traces d'une histoire restée en suspens pendant près de vingt ans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="grid gap-12 lg:grid-cols-[1fr_.9fr]">
+        <div>
+          <div class="kicker mb-5 text-white/45">Tracklist</div>
+          <h2 class="section-title">Astero.</h2>
+        </div>
+        <ol class="space-y-3 text-xl text-white/70">
+          <li>01 — 37501</li><li>02 — Astero</li><li>03 — Microphonie</li><li>04 — Chapitres Mortuaires</li>
+          <li>05 — Canard Boiteux</li><li>06 — Intérieur I</li><li>07 — Intérieur II</li><li>08 — The Sullivan's Quartet</li>
+          <li class="pt-4 text-white">+ 3 titres bonus numériques inédits</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+      <div class="max-w-5xl">
+        <div class="kicker mb-6 text-white/45">Ann Bonny</div>
+        <p class="section-title">Presque vingt ans plus tard, ils rejouent ensemble.</p>
+        <a href="/ann-bonny/" class="btn mt-10">Découvrir Ann Bonny →</a>
+      </div>
+    </section>
+
+    <DownloadBlock zipHref="/downloads/Dossier_Presse_37500_Yens_Astero.pdf" extra={['Dossier de presse PDF', 'Citations presse']} />
+  </main>
+  <Footer />
+</BaseLayout>

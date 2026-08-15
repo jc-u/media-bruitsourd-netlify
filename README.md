@@ -1,23 +1,34 @@
-# Bruit Sourd — Media / Press site
+# Bruit Sourd Media — Astro
 
-Site statique prêt pour Netlify.
+## Installation locale
 
-## Pages
-
-- `/` : accueil média
-- `/ann-bonny/` : press kit Ann Bonny
-- `/37500-yens/` : press kit 37500 Yens / Astero
-
-## Structure
-
+```bash
+npm install
+npm run dev
 ```
-media-bruitsourd/
-├── index.html
-├── netlify.toml
-├── ann-bonny/index.html
-├── 37500-yens/index.html
-└── assets/
-    ├── css/styles.css
-    ├── site.js
-    └── img/
-```
+
+Puis ouvrir `http://localhost:4321`.
+
+## Déploiement Netlify
+
+1. Mettre le projet dans le dépôt GitHub relié à Netlify.
+2. Netlify détectera `netlify.toml`.
+3. Build command : `npm run build`
+4. Publish directory : `dist`
+
+## À modifier avant publication
+
+- Remplacer tous les liens `href="#"` par les vraies URL d'écoute/téléchargement.
+- Ajouter les ZIP de press kits dans `public/downloads/`.
+- Vérifier `contact@bruitsourd.com`.
+- Ajouter les fichiers audio privés ou liens externes.
+- Mettre à jour les crédits exacts et la tracklist Ann Bonny.
+
+## Images
+
+Les visuels fournis sont dans `public/images/`.
+
+## Domaine
+
+Le site est configuré pour :
+`https://media.bruitsourd.com`
