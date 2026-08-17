@@ -1,0 +1,125 @@
+---
+const { tracks = [] } = Astro.props;
+---
+<section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36" id="listen">
+  <div class="grid gap-12 lg:grid-cols-[.72fr_1.28fr]">
+    <div>
+      <div class="kicker mb-5 text-white/45">Listen / Download</div>
+      <h2 class="section-title">Écouter</h2>
+      <p class="mt-8 max-w-md text-lg leading-relaxed text-white/60">
+        Écoutez les extraits directement sur la page ou téléchargez-les individuellement en MP3 et WAV.
+      </p>
+    </div>
+
+    <div class="audio-player" data-audio-player>
+      <audio preload="metadata" data-main-audio></audio>
+      <div class="space-y-2">
+        {tracks.map((track, index) => (
+          <article class="audio-track" data-track data-src={track.mp3} data-title={track.title}>
+            <button class="audio-play" type="button" data-play aria-label={`Lire ${track.title}`}>
+              <span data-icon>▶</span>
+            </button>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-baseline justify-between gap-4">
+                <div class="truncate">
+                  <span class="mr-3 text-xs text-white/35">{String(index + 1).padStart(2, '0')}</span>
+                  <strong class="text-base md:text-lg">{track.title}</strong>
+                </div>
+                <span class="text-xs tabular-nums text-white/40" data-time>01:00</span>
+              </div>
+              <input class="audio-progress" data-progress type="range" min="0" max="100" value="0" step="0.1" aria-label={`Progression de ${track.title}`} />
+            </div>
+            <div class="audio-downloads">
+              <a href={track.mp3} download aria-label={`Télécharger ${track.title} en MP3`}>MP3</a>
+              <a href={track.wav} download aria-label={`Télécharger ${track.title} en WAV`}>WAV</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-audio-player]').forEach((player) => {
+    const audio = player.querySelector('[data-main-audio]');
+    const rows = [...player.querySelectorAll('[data-track]')];
+    let activeRow = null;
+
+    const formatTime = (seconds) => {
+      if (!Number.isFinite(seconds)) return '00:00';
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    };
+
+    const resetRows = () => {
+      rows.forEach((row) => {
+        row.classList.remove('is-playing');
+        row.querySelector('[data-icon]').textContent = '▶';
+      });
+    };
+
+    rows.forEach((row) => {
+      const play = row.querySelector('[data-play]');
+      const progress = row.querySelector('[data-progress]');
+      const time = row.querySelector('[data-time]');
+
+      play.addEventListener('click', async () => {
+        const source = row.dataset.src;
+        if (!source) {
+          return;
+        }
+
+        const sameTrack = activeRow === row;
+        if (sameTrack && !audio.paused) {
+          audio.pause();
+          row.classList.remove('is-playing');
+          row.querySelector('[data-icon]').textContent = '▶';
+          return;
+        }
+
+        if (!sameTrack) {
+          resetRows();
+          activeRow = row;
+          audio.src = source;
+          audio.load();
+        }
+
+        try {
+          await audio.play();
+          resetRows();
+          row.classList.add('is-playing');
+          row.querySelector('[data-icon]').textContent = 'Ⅱ';
+        } catch (error) {
+          console.error('Lecture audio impossible', error);
+        }
+      });
+
+      progress.addEventListener('input', () => {
+        if (activeRow !== row || !audio.duration) return;
+        audio.currentTime = (Number(progress.value) / 100) * audio.duration;
+      });
+
+    });
+
+    const updateActiveRow = () => {
+      if (!activeRow) return;
+      const duration = audio.duration || 60;
+      const progress = activeRow.querySelector('[data-progress]');
+      const time = activeRow.querySelector('[data-time]');
+      progress.value = String((audio.currentTime / duration) * 100 || 0);
+      time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(duration)}`;
+    };
+
+    audio.addEventListener('timeupdate', updateActiveRow);
+    audio.addEventListener('loadedmetadata', updateActiveRow);
+    audio.addEventListener('ended', () => {
+      if (!activeRow) return;
+      activeRow.classList.remove('is-playing');
+      activeRow.querySelector('[data-icon]').textContent = '▶';
+      activeRow.querySelector('[data-progress]').value = '0';
+      audio.currentTime = 0;
+    });
+  });
+</script>

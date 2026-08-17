@@ -3,6 +3,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import DownloadBlock from '../../components/DownloadBlock.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+
+const tracks = [
+  { title: 'Midgrave', mp3: '/audio/ann-bonny/mp3/a1-midgrave.mp3', wav: '/audio/ann-bonny/wav/a1-midgrave.wav' },
+  { title: 'Poor Random Melody', mp3: '/audio/ann-bonny/mp3/a2-poor-random-melody.mp3', wav: '/audio/ann-bonny/wav/a2-poor-random-melody.wav' },
+  { title: 'Jazz-X', mp3: '/audio/ann-bonny/mp3/a3-jazz-x.mp3', wav: '/audio/ann-bonny/wav/a3-jazz-x.wav' },
+  { title: 'Match Mort', mp3: '/audio/ann-bonny/mp3/a4-match-mort.mp3', wav: '/audio/ann-bonny/wav/a4-match-mort.wav' },
+  { title: 'Notre Dame de tes Morts', mp3: '/audio/ann-bonny/mp3/b1-notre-dame-de-tes-morts.mp3', wav: '/audio/ann-bonny/wav/b1-notre-dame-de-tes-morts.wav' },
+  { title: 'Content Warning', mp3: '/audio/ann-bonny/mp3/b2-content-warning.mp3', wav: '/audio/ann-bonny/wav/b2-content-warning.wav' },
+  { title: 'Monsters', mp3: '/audio/ann-bonny/mp3/b3-monsters.mp3', wav: '/audio/ann-bonny/wav/b3-monsters.wav' },
+  { title: 'I Can Not', mp3: '/audio/ann-bonny/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/wav/b4-i-can-not.wav' },
+];
 ---
 <BaseLayout
   title="Ann Bonny — Nee / Söö | Bruit Sourd Press"
@@ -55,7 +67,8 @@ import DownloadBlock from '../../components/DownloadBlock.astro';
     </section>
 
     <section class="mx-auto grid max-w-[1600px] gap-10 px-5 py-24 md:px-8 lg:grid-cols-2 lg:py-36">
-      <img src="/images/ann-bonny-back.jpg" alt="Artwork verso Ann Bonny" class="reveal w-full" />
+      <img src="/images/ann-bonny-back.jpg" alt="Artwork recto Ann Bonny" class="reveal w-full" />
+      <img src="/images/ann-bonny-front.jpg" alt="Artwork verso Ann Bonny" class="reveal w-full" />
       <div class="reveal self-end">
         <div class="kicker mb-6 text-white/45">Artwork</div>
         <h2 class="section-title">Cherry<br />Jo Lee.</h2>
@@ -63,17 +76,17 @@ import DownloadBlock from '../../components/DownloadBlock.astro';
       </div>
     </section>
 
-    <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
+    <section class="mx-auto max-w-[1600px] px-5 md:px-8">
       <div class="grid gap-12 lg:grid-cols-[1fr_.9fr]">
         <div>
-          <div class="kicker mb-5 text-white/45">Listen</div>
-          <h2 class="section-title">Écouter.</h2>
+          
+          <AudioPlayer tracks={tracks} />
         </div>
         <div class="flex flex-wrap content-end gap-3">
           <a class="btn" href="#">Album complet — privé</a>
           <a class="btn" href="#">MP3</a>
           <a class="btn" href="#">WAV</a>
-          <a class="btn" href="#">Bandcamp</a>
+          <a class="btn" href="https://annbonny.bandcamp.com/">Bandcamp</a>
         </div>
       </div>
     </section>
