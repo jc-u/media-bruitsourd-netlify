@@ -1,9 +1,15 @@
+---
+const { lang = 'fr', switchPath = '/en/' } = Astro.props;
+const isEn = lang === 'en';
+const prefix = isEn ? '/en' : '';
+---
 <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
-  <div class="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-4 md:px-8">
-    <a href="/" class="kicker font-black no-underline">Bruit Sourd / Media</a>
-    <nav class="flex gap-4 text-[11px] uppercase tracking-[.14em] text-white/60 md:gap-7">
-      <a href="/37500-yens/" class="hover:text-white">37500 Yens</a>
-      <a href="/ann-bonny/" class="hover:text-white">Ann Bonny</a>
+  <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5 py-4 md:px-8">
+    <a href={`${prefix}/`} class="kicker font-black no-underline">Bruit Sourd / Media</a>
+    <nav class="flex items-center gap-3 text-[10px] uppercase tracking-[.13em] text-white/60 md:gap-7 md:text-[11px]">
+      <a href={`${prefix}/37500-yens/`} class="hover:text-white">37500 Yens</a>
+      <a href={`${prefix}/ann-bonny/`} class="hover:text-white">Ann Bonny</a>
+      <a href={switchPath} class="ml-1 border border-white/30 px-2 py-1 text-white hover:bg-white hover:text-black" aria-label={isEn ? 'Version française' : 'English version'}>{isEn ? 'FR' : 'EN'}</a>
     </nav>
   </div>
 </header>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 const {
+  lang = 'fr',
   title = 'Bruit Sourd — Press / Media',
   description = 'Espace presse officiel du label Bruit Sourd',
   image = '/images/ann-bonny-front.jpg'
@@ -8,7 +9,7 @@ const {
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />

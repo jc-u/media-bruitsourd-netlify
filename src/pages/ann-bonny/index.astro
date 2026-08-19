@@ -6,14 +6,14 @@ import DownloadBlock from '../../components/DownloadBlock.astro';
 import AudioPlayer from '../../components/AudioPlayer.astro';
 
 const tracks = [
-  { title: 'Midgrave', mp3: '/audio/ann-bonny/mp3/a1-midgrave.mp3', wav: '/audio/ann-bonny/wav/a1-midgrave.wav' },
-  { title: 'Poor Random Melody', mp3: '/audio/ann-bonny/mp3/a2-poor-random-melody.mp3', wav: '/audio/ann-bonny/wav/a2-poor-random-melody.wav' },
-  { title: 'Jazz-X', mp3: '/audio/ann-bonny/mp3/a3-jazz-x.mp3', wav: '/audio/ann-bonny/wav/a3-jazz-x.wav' },
-  { title: 'Match Mort', mp3: '/audio/ann-bonny/mp3/a4-match-mort.mp3', wav: '/audio/ann-bonny/wav/a4-match-mort.wav' },
-  { title: 'Notre Dame de tes Morts', mp3: '/audio/ann-bonny/mp3/b1-notre-dame-de-tes-morts.mp3', wav: '/audio/ann-bonny/wav/b1-notre-dame-de-tes-morts.wav' },
-  { title: 'Content Warning', mp3: '/audio/ann-bonny/mp3/b2-content-warning.mp3', wav: '/audio/ann-bonny/wav/b2-content-warning.wav' },
-  { title: 'Monsters', mp3: '/audio/ann-bonny/mp3/b3-monsters.mp3', wav: '/audio/ann-bonny/wav/b3-monsters.wav' },
-  { title: 'I Can Not', mp3: '/audio/ann-bonny/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/wav/b4-i-can-not.wav' },
+  { title: 'Midgrave', mp3: '/audio/ann-bonny/snippets/mp3/a1-midgrave.mp3', wav: '/audio/ann-bonny/snippets/wav/a1-midgrave.wav' },
+  { title: 'Poor Random Melody', mp3: '/audio/ann-bonny/snippets/mp3/a2-poor-random-melody.mp3', wav: '/audio/ann-bonny/snippets/wav/a2-poor-random-melody.wav' },
+  { title: 'Jazz-X', mp3: '/audio/ann-bonny/snippets/mp3/a3-jazz-x.mp3', wav: '/audio/ann-bonny/snippets/wav/a3-jazz-x.wav' },
+  { title: 'Match Mort', mp3: '/audio/ann-bonny/snippets/mp3/a4-match-mort.mp3', wav: '/audio/ann-bonny/snippets/wav/a4-match-mort.wav' },
+  { title: 'Notre Dame de tes Morts', mp3: '/audio/ann-bonny/snippets/mp3/b1-notre-dame-de-tes-morts.mp3', wav: '/audio/ann-bonny/snippets/wav/b1-notre-dame-de-tes-morts.wav' },
+  { title: 'Content Warning', mp3: '/audio/ann-bonny/snippets/mp3/b2-content-warning.mp3', wav: '/audio/ann-bonny/snippets/wav/b2-content-warning.wav' },
+  { title: 'Monsters', mp3: '/audio/ann-bonny/snippets/mp3/b3-monsters.mp3', wav: '/audio/ann-bonny/snippets/wav/b3-monsters.wav' },
+  { title: 'I Can Not', mp3: '/audio/ann-bonny/snippets/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/snippets/wav/b4-i-can-not.wav' },
 ];
 ---
 <BaseLayout
@@ -83,9 +83,8 @@ const tracks = [
           <AudioPlayer tracks={tracks} />
         </div>
         <div class="flex flex-wrap content-end gap-3">
-          <a class="btn" href="#">Album complet — privé</a>
-          <a class="btn" href="#">MP3</a>
-          <a class="btn" href="#">WAV</a>
+          <a class="btn" href="/public/audio/ann-bonny/mp3.zip">Album complet — MP3</a>
+          <a class="btn" href="/public/audio/ann-bonny/wav.zip">Album complet — WAV</a>
           <a class="btn" href="https://annbonny.bandcamp.com/">Bandcamp</a>
         </div>
       </div>
