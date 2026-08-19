@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.netlify/
+.astro/
+*.zip
+
+# system files
+.DS_Store
+*:Zone.Identifier
