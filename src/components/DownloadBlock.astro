@@ -1,5 +1,5 @@
 ---
-const { zipHref = '#', extra = [] } = Astro.props;
+const { zipHref = '', extra = [] } = Astro.props;
 ---
 <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
   <div class="grid gap-12 lg:grid-cols-[1fr_.8fr]">
@@ -8,14 +8,8 @@ const { zipHref = '#', extra = [] } = Astro.props;
       <h2 class="section-title">Download<br />press kit.</h2>
     </div>
     <div class="self-end">
-      <ul class="mb-10 space-y-3 text-lg text-white/70">
-        <li>Artwork HD</li>
-        <li>Biographie FR / EN</li>
-        <li>Photos presse</li>
-        <li>Informations de sortie</li>
-        {extra.map((item) => <li>{item}</li>)}
-      </ul>
-      <a class="btn btn-primary" href={zipHref}>Télécharger le kit complet ↓</a>
+
+      <a class="btn btn-primary" href={zipHref} download>Télécharger le kit complet ↓</a>
     </div>
   </div>
 </section>
