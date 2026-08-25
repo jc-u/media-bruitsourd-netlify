@@ -3,6 +3,7 @@ dist/
 .netlify/
 .astro/
 *.zip
+!public/downloads/*.zip
 
 # system files
 .DS_Store
