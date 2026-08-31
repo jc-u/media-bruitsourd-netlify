@@ -1,0 +1,31 @@
+[
+  {
+    "artist": "37500 Yens",
+    "title": "Astero",
+    "release_date": "2026-10-09",
+    "catalog_number": "BS004",
+    "barcode_ean13": "3700398743042",
+    "format": "LP + 3 digital bonus tracks",
+    "quantity_kuroneko": 60,
+    "labels": "Bruit Sourd / Eye Of Storm Records / Garden Seat",
+    "distribution": "Kuroneko / KMA60 proposal",
+    "origin": "Reims, France",
+    "genre": "Noise rock / Math rock / Experimental",
+    "vinyl_remaster": "Sylvain Masure",
+    "press_url": "https://media.bruitsourd.com/37500-yens/"
+  },
+  {
+    "artist": "Ann Bonny",
+    "title": "Nee / Söö",
+    "release_date": "2026-10-09",
+    "catalog_number": "POU045",
+    "barcode_ean13": "3700398743059",
+    "format": "Gatefold LP",
+    "quantity_kuroneko": 30,
+    "labels": "Poutrage Records / Tandori Records / Vox Project / Day Off / Araki Records / Rejuvenation Records / Arsenic Solaris",
+    "distribution": "Kuroneko / Bruit Sourd / KMA60 proposal",
+    "origin": "Reims, France",
+    "genre": "Blurry Noise",
+    "press_url": "https://media.bruitsourd.com/ann-bonny/"
+  }
+]

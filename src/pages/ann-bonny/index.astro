@@ -16,12 +16,7 @@ const tracks = [
   { title: 'I Can Not', mp3: '/audio/ann-bonny/snippets/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/snippets/wav/b4-i-can-not.wav' },
 ];
 ---
-<BaseLayout
-  title="Ann Bonny — Nee / Söö | Bruit Sourd Press"
-  description="Press kit officiel d'Ann Bonny — Nee / Söö, sortie le 25 septembre 2026."
-  image="/images/ann-bonny-front.jpg"
->
-  <Header />
+<BaseLayout title="Ann Bonny — Nee / Söö | Bruit Sourd" description="Dossier de presse officiel d'Ann Bonny — Nee / Söö, sortie le 9 octobre 2026." image="/images/ann-bonny-front.jpg"><Header />
   <main>
     <section class="relative min-h-screen overflow-hidden">
       <img src="/images/ann-bonny-front.jpg" alt="Ann Bonny — Nee / Söö" class="absolute inset-0 h-full w-full object-cover" data-parallax />
@@ -32,7 +27,7 @@ const tracks = [
         <div class="mt-7 flex flex-wrap gap-3">
           <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">Nee / Söö</span>
           <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">LP</span>
-          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">25.09.2026</span>
+          <span class="rounded-full border border-white/40 px-3 py-2 text-xs uppercase tracking-[.12em]">09.10.2026</span>
         </div>
       </div>
     </section>
@@ -44,7 +39,7 @@ const tracks = [
       </div>
       <div class="reveal space-y-6 text-lg leading-relaxed text-white/75">
         <p><strong class="text-white">Ann Bonny</strong> (1697 – ?) : pirate méconnue. Mélange de genres, transgressions et refus des normes. Vie agenre et polyforme. Relationne avec John Rackham, et surtout Mary Read. Ridiculise ses pairs et la marine royale. Elle disparaît après la mort de Mary Read, probablement l'année de ses 24 ans.</p>
-        <p><strong class="text-white">Ann Bonny</strong> (2020–2022 – aujourd'hui) : trio grand-estien aux contours variables. Noise idoine. Né des cendres de 37500 Yens et Rhume Carabinée. Toujours vivant.</p>
+        <p><strong class="text-white">Ann Bonny</strong> (2020–2022 – aujourd'hui) : trio grand-estien aux contours variables. Noise idoine. Né des cendres de 37500 Yens et Rhume Carabiné. Toujours vivant.</p>
         <p>Faisant directement suite à Ma Secte, Ann Bonny est la conséquence de plusieurs années de croisements et de rencontres. À l'origine, 37500 Yens. Puis Harpon. Ensuite Ma Secte. Enfin Ann Bonny : Franck à la batterie, Jud à la basse, Julie à la guitare, au chant et aux synthétiseurs.</p>
         <p>Après deux EP, dont le premier a connu une sortie physique en cassette, le trio marque le coup en vinyle. Mettre à la fois en valeur les illustrations de <a href="https://www.instagram.com/cherry.jolee/"><strong class="text-white">Cherry Jo Lee</strong></a> et le son (enregistrement, mixage, mastering) de <a href="https://www.instagram.com/gnomestudio/"><strong class="text-white">Sylvain Masure</strong></a>. Et puis ça leur laisse le temps de composer la suite…
 </p>
@@ -83,8 +78,8 @@ const tracks = [
           <AudioPlayer tracks={tracks} />
         </div>
         <div class="flex flex-wrap content-end gap-3">
-          <a class="btn" href="/audio/ann-bonny/mp3.zip">Album complet — MP3</a>
-          <a class="btn" href="/audio/ann-bonny/wav.zip">Album complet — WAV</a>
+          <a class="btn" href="/dist/audio/ann-bonny/mp3.zip">Album complet — MP3</a>
+          <a class="btn" href="/dist/audio/ann-bonny/wav.zip">Album complet — WAV</a>
           <a class="btn" href="https://annbonny.bandcamp.com/">Bandcamp</a>
         </div>
       </div>
@@ -92,13 +87,13 @@ const tracks = [
 
     <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36">
       <div class="max-w-5xl">
-        <div class="kicker mb-6 text-white/45">25 septembre 2026</div>
+        <div class="kicker mb-6 text-white/45">09 octobre 2026</div>
         <p class="section-title">Ce n'est pas le retour de 37500 Yens.<br />C'est une nouvelle histoire.</p>
         <a href="/37500-yens/" class="btn mt-10">Découvrir Astero →</a>
       </div>
     </section>
 
-    <DownloadBlock zipHref="/downloads/AnnBonny-PressKit-FR.zip" extra={['Pochette recto / verso', 'Crédits complets']} />
+    <DownloadBlock zipHref="./downloads/AnnBonny-PressKit-FR.zip" extra={['Pochette recto / verso', 'Crédits complets']} />
   </main>
   <Footer />
 </BaseLayout>

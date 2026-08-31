@@ -1,37 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { releases } from '../data/releases';
+import BaseLayout from '../layouts/BaseLayout.astro'; import Header from '../components/Header.astro'; import Footer from '../components/Footer.astro'; import { releases } from '../data/releases';
 ---
-<BaseLayout>
-  <Header />
-  <main>
-    <section class="mx-auto flex min-h-[62vh] max-w-[1600px] flex-col justify-end px-5 pb-14 pt-36 md:px-8 md:pb-20">
-      <div class="kicker mb-5 text-white/45">Press • Media • 2026</div>
-      <h1 class="display">BRUIT<br />SOURD</h1>
-      <div class="mt-8 flex flex-col justify-between gap-4 text-white/55 md:flex-row md:items-end">
-        <p class="max-w-xl text-lg">Deux sorties. Deux histoires liées par près de vingt ans de bruit, de tension et d'expérimentation.</p>
-        <div class="kicker">25 septembre 2026</div>
-      </div>
-    </section>
-
-    <section class="mx-auto grid max-w-[1600px] gap-5 px-5 pb-24 md:grid-cols-2 md:px-8">
-      {releases.map((release) => (
-        <a class:list={['press-card reveal', release.back && 'flip-card']} href={`/${release.slug}/`}>
-          <img class="front" src={release.cover} alt={`${release.artist} — ${release.title}`} />
-          {release.back && <img class="back" src={release.back} alt={`Verso de ${release.title}`} />}
-          <div class="overlay"></div>
-          <div class="copy">
-            <div class="kicker mb-3 text-white/60">{release.subtitle}</div>
-            <h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.05em] md:text-7xl">{release.artist}</h2>
-            <div class="mt-4 flex justify-between gap-4 text-sm text-white/70">
-              <span>{release.title}</span><span>{release.date}</span>
-            </div>
-          </div>
-        </a>
-      ))}
-    </section>
-  </main>
-  <Footer />
-</BaseLayout>
+<BaseLayout title="Bruit Sourd — Presse / Médias" description="Espace presse officiel de Bruit Sourd."><Header lang="fr" switchPath="/en/" /><main>
+<section class="mx-auto flex min-h-[62vh] max-w-[1600px] flex-col justify-end px-5 pb-14 pt-36 md:px-8 md:pb-20"><div class="kicker mb-5 text-white/45">Presse • Médias • 2026</div><h1 class="display">BRUIT<br/>SOURD</h1><div class="mt-8 flex flex-col justify-between gap-4 text-white/55 md:flex-row md:items-end"><p class="max-w-xl text-lg">Deux sorties. Deux histoires liées par près de vingt ans de bruit, de tension et d'expérimentation.</p><div class="kicker">9 octobre 2026</div></div></section>
+<section class="mx-auto grid max-w-[1600px] gap-5 px-5 pb-24 md:grid-cols-2 md:px-8">{releases.map((release)=><a class:list={['press-card reveal',release.back&&'flip-card']} href={`/${release.slug}/`}><img class="front" src={release.cover} alt={`${release.artist} — ${release.title}`}/>{release.back&&<img class="back" src={release.back} alt={`Verso de ${release.title}`}/>}<div class="overlay"></div><div class="copy"><div class="kicker mb-3 text-white/60">{release.subtitle}</div><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.05em] md:text-7xl">{release.artist}</h2><div class="mt-4 flex justify-between gap-4 text-sm text-white/70"><span>{release.title}</span><span>{release.date}</span></div></div></a>)}</section></main><Footer lang="fr" /></BaseLayout>
