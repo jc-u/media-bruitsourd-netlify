@@ -1,14 +1,14 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import Header from '../../components/Header.astro'; import Footer from '../../components/Footer.astro'; import AudioPlayer from '../../components/AudioPlayer.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Header from '../../components/Header.astro'; import Footer from '../../components/Footer.astro'; import AudioPlayer from '../../components/AudioPlayer.astro'; import DownloadBlock from '../../components/DownloadBlock.astro';
 const tracks = [
-  { title: 'Midgrave', mp3: '/audio/ann-bonny/mp3/a1-midgrave.mp3', wav: '/audio/ann-bonny/wav/a1-midgrave.wav' },
-  { title: 'Poor Random Melody', mp3: '/audio/ann-bonny/mp3/a2-poor-random-melody.mp3', wav: '/audio/ann-bonny/wav/a2-poor-random-melody.wav' },
-  { title: 'Jazz-X', mp3: '/audio/ann-bonny/mp3/a3-jazz-x.mp3', wav: '/audio/ann-bonny/wav/a3-jazz-x.wav' },
-  { title: 'Match Mort', mp3: '/audio/ann-bonny/mp3/a4-match-mort.mp3', wav: '/audio/ann-bonny/wav/a4-match-mort.wav' },
-  { title: 'Notre Dame de tes Morts', mp3: '/audio/ann-bonny/mp3/b1-notre-dame-de-tes-morts.mp3', wav: '/audio/ann-bonny/wav/b1-notre-dame-de-tes-morts.wav' },
-  { title: 'Content Warning', mp3: '/audio/ann-bonny/mp3/b2-content-warning.mp3', wav: '/audio/ann-bonny/wav/b2-content-warning.wav' },
-  { title: 'Monsters', mp3: '/audio/ann-bonny/mp3/b3-monsters.mp3', wav: '/audio/ann-bonny/wav/b3-monsters.wav' },
-  { title: 'I Can Not', mp3: '/audio/ann-bonny/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/wav/b4-i-can-not.wav' },
+  { title: 'Midgrave', mp3: '/audio/ann-bonny/snippets/mp3/a1-midgrave.mp3', wav: '/audio/ann-bonny/snippets/wav/a1-midgrave.wav' },
+  { title: 'Poor Random Melody', mp3: '/audio/ann-bonny/snippets/mp3/a2-poor-random-melody.mp3', wav: '/audio/ann-bonny/snippets/wav/a2-poor-random-melody.wav' },
+  { title: 'Jazz-X', mp3: '/audio/ann-bonny/snippets/mp3/a3-jazz-x.mp3', wav: '/audio/ann-bonny/snippets/wav/a3-jazz-x.wav' },
+  { title: 'Match Mort', mp3: '/audio/ann-bonny/snippets/mp3/a4-match-mort.mp3', wav: '/audio/ann-bonny/snippets/wav/a4-match-mort.wav' },
+  { title: 'Notre Dame de tes Morts', mp3: '/audio/ann-bonny/snippets/mp3/b1-notre-dame-de-tes-morts.mp3', wav: '/audio/ann-bonny/snippets/wav/b1-notre-dame-de-tes-morts.wav' },
+  { title: 'Content Warning', mp3: '/audio/ann-bonny/snippets/mp3/b2-content-warning.mp3', wav: '/audio/ann-bonny/snippets/wav/b2-content-warning.wav' },
+  { title: 'Monsters', mp3: '/audio/ann-bonny/snippets/mp3/b3-monsters.mp3', wav: '/audio/ann-bonny/snippets/wav/b3-monsters.wav' },
+  { title: 'I Can Not', mp3: '/audio/ann-bonny/snippets/mp3/b4-i-can-not.mp3', wav: '/audio/ann-bonny/snippets/wav/b4-i-can-not.wav' },
 ];
 ---
 <BaseLayout lang="en" title="Ann Bonny — Nee / Söö | Bruit Sourd Press" description="Official press kit for Ann Bonny — Nee / Söö, out October 09, 2026." image="/images/ann-bonny-front.jpg"><Header lang="en" switchPath="/ann-bonny/"/><main>
@@ -17,6 +17,21 @@ const tracks = [
 <section class="mx-auto max-w-[1600px] px-5 pb-24 md:px-8"><img src="/images/ann-bonny-promo.jpeg" alt="Ann Bonny press photo" class="reveal h-auto w-full object-cover grayscale"/></section>
 <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36"><div class="max-w-5xl reveal"><div class="kicker mb-6 text-white/45">Blurry-noise</div><p class="section-title">Violence.<br/>Darkness.<br/>Breath cut short.</p><p class="mt-10 max-w-3xl text-xl leading-relaxed text-white/65">The band calls it blurry-noise. More concretely: the pressure and abrasion of Chat Pile, melodies brushing against YC-CY, uncertain rhythms and an appetite for everything unstable, awkward and unsettling in contemporary chamber music. Through the weight of it all, Julie's voice remains soft, fragile and almost suspended.</p></div></section>
 <section class="mx-auto grid max-w-[1600px] gap-10 px-5 py-24 md:px-8 lg:grid-cols-2 lg:py-36"><img src="/images/ann-bonny-back.jpg" alt="Ann Bonny back cover artwork" class="reveal w-full"/><div class="reveal self-end"><div class="kicker mb-6 text-white/45">Artwork</div><h2 class="section-title">Cherry<br/>Jo Lee.</h2><p class="mt-8 max-w-xl text-lg text-white/65">The record's illustrations extend its darkness, humour and taste for hybrid forms.</p></div></section>
-<AudioPlayer tracks={tracks} lang="en"/>
+    <section class="mx-auto max-w-[1600px] px-5 md:px-8">
+      <div class="grid gap-12 lg:grid-cols-[1fr_.9fr]">
+        <div>
+          
+          <AudioPlayer tracks={tracks} lang="en" />
+        </div>
+        <div class="flex flex-wrap content-end gap-3">
+          <a class="btn" href="/dist/audio/ann-bonny/mp3.zip">Complete Album — MP3</a>
+          <a class="btn" href="/dist/audio/ann-bonny/wav.zip">Complete Album — WAV</a>
+          <a class="btn" href="https://annbonny.bandcamp.com/">Bandcamp</a>
+        </div>
+      </div>
+    </section>
+
+    <DownloadBlock lang="en" zipHref="/downloads/AnnBonny-PressKit-EN.zip" extra={['Dossier de presse PDF', 'Citations presse']} />
+
 <section class="rule mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-36"><div class="max-w-5xl"><div class="kicker mb-6 text-white/45">October 09, 2026</div><p class="section-title">This is not the return of 37500 Yens.<br/>It is a new story.</p><a href="/en/37500-yens/" class="btn mt-10">Discover Astero →</a></div></section>
 </main><Footer lang="en"/></BaseLayout>
